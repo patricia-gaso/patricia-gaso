@@ -1,0 +1,97 @@
+"TRATAMIENTO DE ERRORES"
+
+#Errores
+
+#Excepciones
+#Puede suceder que el usuario ingrese el digito de tipo string(ej. cinco) y el programa ya no se siga ejecutando
+try: #el programa va intentar resolver lo siguiente, es decir, el usuario ingresa de mandera correcta el dígito
+    numero=int(input("Digite un número"))
+    print(f"La suma es :{numero+10}")
+
+except: #aqui se captura la excepcion y el programa continua
+    print("Ha ocurrido un error")
+print("Programa terminado")
+
+
+while True: #nos permite que el programa se siga ejecutando hasta que el usuario digite de manera correcta el número en entero
+    try:  # el programa va intentar resolver lo siguiente, es decir, el usuario ingresa de mandera correcta el dígito
+        numero = int(input("Digite un número"))
+        print(f"La suma es :{numero + 10}")
+        break
+
+    except:  # aqui se captura la excepcion y el programa continua
+        print("Ha ocurrido un error")
+print("Programa terminado")
+
+######
+
+while True:
+    try:  # el programa va intentar resolver lo siguiente, es decir, el usuario ingresa de mandera correcta el dígito
+        numero = int(input("Digite un número"))
+        print(f"La suma es :{numero + 10}")
+    except:  # aqui se captura la excepcion y el programa continua
+        print("Ha ocurrido un error")
+    else: #caso contrario del except
+        print("Programa terminado de manera correcta")
+        break
+
+print("Programa terminado")
+
+
+#####
+while True:
+    try:  # el programa va intentar resolver lo siguiente, es decir, el usuario ingresa de mandera correcta el dígito
+        numero = int(input("Digite un número"))
+        print(f"La suma es :{numero + 10}")
+    except:  # aqui se captura la excepcion y el programa continua
+        print("Ha ocurrido un error")
+    else: #caso contrario del except
+        print("Programa terminado de manera correcta")
+        break
+    finally:#cuando el try funcione y  cuando haya una excepcion se va a ejecutar el finally
+        print("Iteracion finalizada")
+print("Programa terminado")
+
+
+#Ejemplos
+#como capturar multiples excepciones
+
+def dividir():
+    while True:
+        try:
+            num1 = float(input("Digite un numero"))
+            num2 = float(input("Digite un numero"))
+            resultado = num1 / num2
+            print(
+                f"El resultado de la division es :{resultado}:.2f")  # puede suceder que el usuario digite un valr strig y no un numero, eso ya seria una excepcion
+        except ValueError:  # indicamos cual es la excepcion
+            print("Error-> Digite correctamente los valores númericos")
+        except ZeroDivisionError:  # la excpecion de que no se puede dividir entre cero
+            print("Error, no se puede dividir entre cero")
+        else:  # cuando no hay ningun tipo de excepcion sucede el else
+            break
+dividir()
+
+
+#Lanzar nuestras propias excepciones
+
+def verificar_edad(edad): #si el usuario digita edad negativa, para el programa no sucede nada, pero podemos generar nuestra excpecion de que sea positiva la edad
+    if edad<0:
+        raise ValueError("La edad no puede ser negativa")
+    elif edad<18:
+        print("Eres muy joven")
+    elif edad<30:
+        print("Eres joven")
+    elif edad<50:
+        print("Eres maduro")
+
+edad=int(input("Digite su edad"))
+try:
+    verificar_edad(edad)
+except ValueError as EdadNegativa:
+    print(EdadNegativa)
+
+print("Programa terminado")
+
+
+
