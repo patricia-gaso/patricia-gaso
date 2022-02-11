@@ -1,0 +1,161 @@
+"CADENA DE CARACTERES"
+
+cadena="Estoy \"estudiando\" " #quiero que estudiando este entre comillas
+print(cadena)
+
+
+cadena1="Estoy \t estudiando " #nos deja cuatro espacios
+print(cadena1)
+
+cadena2="Estoy \nestudiando " #salto de linea
+print(cadena2)
+
+cadena3=r"D:\nombre\trabajos" #cadenas engrudo
+print(cadena3)
+
+print("""Hola
+quetal?
+mi nombre es paty
+""")
+
+ca1="Hola"
+cad2="Que tal?"
+
+print(ca1 +cad2)
+
+cad3="Patricia" #Queremos mostrar un elemento en especifico de la cadena
+print(cad3[0]) #pongo el índice y me muestra el caracter que se ubique en ese inidce
+print(cad3[1:4]) #toma elementos en un cierto rango
+
+ #las cadenas son inmutables, no se pueden modificar elementos
+
+
+#Para poder modificarlas se hace lo siguiente
+
+cad5="Patricia"
+cad5= 'p' + cad5[1:]
+print(cad5)
+
+"Metodos para cadenas de caracteres"
+cad0="Hola mundo".upper() #convierte a mayusculas la cadena
+print(cad0)
+
+cad00="Hola mundo".lower() #convierte a minusculas
+print(cad00)
+
+cad000="hola mundo".capitalize() #de toda la cadena, pone en mayuscula la primera letra que encuentre
+print(cad000)
+
+cad0000="hola mundo".title() #cambia a mayuscul cada letra de la frase
+print(cad0000)
+
+c1="hola mundo hola mundo hola hola".count('hola') #cuenta cuantas veces aparece una letra o palabras
+print(c1)
+
+c2="hola mundo hola mundo".find('o') #buscar la primera conincidencia en la cadena en que indice se encuentra la letra
+c2="hola mundo hola mundo".rfind('o') #buscar la ultima conincidencia en la cadena en que indice se encuentra la letra
+print(c2)
+
+c3="1000".isdigit() #CADENA de numeros , pregunta si la cadena tiene caracteres solo digitos
+print(c3)
+
+c4="ABSBucuKAKAIAI".isalpha() #combrueba si todos los caracteres son alfabeticos
+print(c4)
+
+c5="ASGSG088282".isalnum() #cuembra si la cadena tiene caracteres alfanumericos
+print(c5)
+
+c6="hola mundo".islower() #me dice si la cadena esta en minusculas
+c66="HOLA MUNDO".isupper()#me dice si la cadena esta en mayusculas
+print(c6)
+print(c66)
+
+c7="Hola Mundo".istitle() #combreuea si cada una de las palabras de la cadena comienza en mayusculas
+c77="          ".isspace() #comprueba si la cadena esta llena de espacios
+print(c7)
+print(c77)
+
+cad8="hola mundo".startswith('h') #nos retorna un valor boolean, nos dice si la cadena comienza con ese caracter
+cad888="hola mundi".endswith('o') #nos dice si la cadena termina con ese caracter o frase
+print(cad8)
+print(cad888)
+
+cad9="hola mundo".split() #separa los elementos de la cadena cada vez que encuentra un esapcios y los agrega a una lista
+print(cad9)
+cad10=",".join("patricia") #separa cada uno de los elementos con una coma
+print(cad10)
+
+cad11="    hola   ".strip() #elimina los espacios de adelate y de  atras
+print(cad11)
+
+cad12="hola mundo".replace('o', '0') #reemplaza cada 'o' por '0'
+print(cad12)
+
+
+"EJERCICIOS"
+#1) Hacer un programa donde se deberá imprimir la palabra con mas caracteresde de dos palabras. Cuando ambas cadenas concidan en el msmo numero de caracteres
+#se deberá mostrar el mensaje son iguales
+
+CAD1=input("Ingrese una cadena de caracteres")
+CAD2=input("Ingrese otra cadena de caracteres")
+print(CAD1)
+print(CAD2)
+
+if len(CAD1) > len(CAD2):
+    print(f"\n La cadena :{CAD1},tiene más caracteres")
+elif len(CAD2) > len(CAD2):
+    print(f"\nLa cadena: {CAD2}, tiene más caracteres")
+else:
+    print("Ambas cadenas son iguales")
+
+#2) Hacer un programa para detectar si una frase introducida por el usuario  finaliza con '.' o no. Ademas, se debe imprimir;
+#a) termina con un punto
+#b) no termina con un punto
+
+frase=input("Ingrese una frase")
+print(frase)
+
+if frase.endswith('.'):
+    print(f"La frase termina con un punto")
+else:
+    print(f"La frase no termina con un punto")
+
+#5) Hacer un programa que determine si una palabra es palíndroma o no
+
+palabra=input("Digite una palabra o frase:").strip()
+palabra=palabra.replace(" ", "")
+
+#invertir la cadena
+
+palabra2=palabra[::-1]
+print(f"La cadena invertida es: {palabra2}")
+
+#Ver que la palabra es palíndorma
+if palabra==palabra2:
+    print(f"La palabra o frase es un palindromo")
+else:
+    print(f"La palabra o frase no es un palíndromo")
+
+
+#4) Hacer un programa donde se remplacen todos los espacios de una cadena por asteriscos y además cada palabra comience con mayusculas
+
+CADENA1=input("Digite una cadena:")
+
+CADENA1=CADENA1.title()
+CADENA1=CADENA1.replace(" ", "*")
+print(CADENA1)
+
+#5) Hacer un programa donde se cuenten cada una de las vocales de una cadena, mostrar el conteo de cada una de las vocales
+CADENA2=input("Digite una cadena")
+
+CADENA3=CADENA2.count('a')
+print(f"Vocal a: {CADENA3} ")
+CADENA4=CADENA2.count('e')
+print(f"Vocal e:{CADENA4} 'e' ")
+CADENA5=CADENA2.count('i')
+print(f"Vocal i:{CADENA5} 'i' ")
+CADENA6=CADENA2.count('o')
+print(f"Vocal o: {CADENA6} 'o' ")
+CADENA7=CADENA2.count('u')
+print(f"Vocal u:{CADENA7} 'u' ")
+
