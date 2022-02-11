@@ -1,0 +1,162 @@
+#CONDICIONALES (Estructras mas importantes)
+'''
+Sentencias que nos permite comparar dos valores, esa cmparacion no da un valor logico
+'''
+'''veremos si el número es positivo con el condicional 'if',
+es decir si se cumple la condicion se van a ejecutar cierta numero de acciones
+    '''
+numero= int(input("Digite un número:"))
+if numero>0:
+
+
+    print("El numero es positvo")
+elif numero==0:
+    print("El  numero es 0")
+else: #nos permite ejecutar un bloque de codigo que no cumpla la condición
+    print("El numero es negativo")
+#si lacondicon del if no se cumple, entonces automaticamente salta al 'else'
+#como encadenar varias condiciones: con la cndicion 'elif'
+
+
+#CONDICIOANALES COMBINADAS
+edad= int(input("Digite su edad"))
+
+if edad>18:
+    print("El usuario es mayor de edad")
+else:
+    print("El usuario no es mayor de edad")
+#Condiconales anidados: condicional dentro de otro
+edad1= int(input("Digite su edad"))
+if edad1>0:
+    print("Edad correcta")
+    if edad1>=18:
+        print("Es mayor de edad")
+else:
+    print("Edad incorrecta")
+#Veamos las condiciones combinadas
+edad2= int(input("Digite su edad"))
+if edad2>0 and edad2<100:
+    print("Edad correcta")
+    if edad2>=18:
+        print("Es mayor de edad")
+else:
+    print("Edad incorrecta")
+#Operadores relacionales combinados (para hacer mas corto el codigo aterior edad2)
+edad3= int(input("Digite su edad"))
+if 0<edad3<100:
+    print("Edad correcta")
+    if edad3>=18:
+        print("Es mayor de edad")
+else:
+    print("Edad incorrecta")
+
+
+    #Ejercicios
+'''
+Ejercicio1. Hacer un programa que pida 2 numeros y se de cuenta 
+cual de ellos es par, o si ambos lo son
+'''
+
+numero1= int(input("Digite el  primer numero"))
+numero2= int(input("Digite el segundo numero"))
+
+if numero1%2==0 and numero2%2==0:
+    print("Los números son pares")
+elif numero1%2==0 and numero2%2!=0:
+    print("El número 1 es par")
+elif numero1%2!=0 and numero2%2==0:
+    print("El número 2 es par")
+else:
+    print("Ninguno de los dos es par")
+
+'''
+Ejercicio 2. Hacer un programa que pida 3 numeros 
+y determinar cual es el mayor
+'''
+
+num1= int(input("Número 1:"))
+num2= int(input("Número 2:"))
+num3= int(input("Número 3:"))
+
+if num1>=num2 and num1>=num3:
+    print(f"El numero mayor es {num1}")
+if num2>=num1 and num2>=num3:
+    print(f"El numero mayor es {num2}")
+if num3>=num1 and num3>=num2:
+    print(f"El numero mayor es {num3}")
+
+
+'''
+Ejercicio 3: Hacer un programa que pida un caracter e indique
+si es una vocal o no.
+'''
+#con el metodo lower nos va ayudar a convertir en minuscula si el usuario ingesa un caracter en mayuscula
+letra= input("Digite un caracter:").lower()
+
+if letra== 'a' or letra=='e' or letra=='i' or letra=='o' or letra=='u':
+    print("Es una vocal")
+else:
+    print("No es una vocal")
+
+'''
+EJERCICIO 4.Construir un prgrama que simule el funcionamiento de una calculadora que puede 
+realizar las cuatro operaciones aritméticas basicas (suma, resta, multi, division). 
+El usuario debe especificar la operacion con el primer caracter del nombre de la operacion.
+'''
+a= int(input("Digite el primer número"))
+b= int(input("Digite el segundo número"))
+operacion= input("Indique la operacion que desea realizar:").lower()
+a= int(input("Digite el primer número"))
+b= int(input("Digite el segundo número"))
+operacion= input("Indique la operacion que desea realizar:").lower()
+
+if operacion== 'S':
+    suma= a+b
+    print(f"El resultado es :{S}")
+elif operacion=='R':
+    resta= a-b
+    print(f"El resultado es :{R}")
+elif operacion=='M':
+    multi: a*b
+    print(f"El resultado es :{multi}")
+elif operacion=='D':
+    div= a/b
+    print(f"El resultado es :{div:.2f}")
+
+'''
+Hacer un programa que simule un cajero automático con un saldo inicial de $1000 y tendra el siguiente menú de opciones
+1. Ingresar dinero en la cuenta 
+2. Retirar dinero de la cueta 
+3. Mostrar saldo disponible
+4. Salir
+'''
+saldo=1000
+print("\t.:MENU:.") #Decoracion
+print("1. Ingresar dinero en la cuenta ")
+print("2. Retirar dinero de la cueta ")
+print("3. Mostrar saldo disponible")
+print("4. Salir")
+opcion= int(input("Digite una opcion deñ menu"))
+
+print() #salto de linea
+
+if opcion==1:
+    extra=float(input("Cuanto dinero desea ingresar ->"))
+    saldo += extra
+    print(f"Dinero en la cuenta: {saldo}")
+elif opcion==2:
+    retirar= float(input("Cuanto dinero desea rertirar ->"))
+    if retirar>saldo:
+        print("No tiene esa cantidad de dinero")
+    else:
+        saldo-= retirar
+        print(f"Dinero en la cuenta :{saldo}")
+elif opcion==3:
+    print(f"Dinero en la cuenta: {saldo}")
+elif opcion==4:
+    print("Gracias por utilizar su cajero automatico")
+else:
+    print("Error, se equivocó de opción de menú")
+
+
+
