@@ -1,0 +1,248 @@
+"FUNCIONES"
+ #Funciones sin retorno de valor
+
+def saludar():
+    print("Hola amigo")
+
+saludar()
+#se puede llamar a la funcion las veces que sean
+saludar()
+saludar()
+
+#funcion con parámetro
+def saludar1(nombre):
+    print(f"Hola {nombre}")
+saludar1("Flor")
+saludar1("Carlos")
+
+#Tabla de multiplicar de un número
+
+def tabla_multiplicar(num):
+    for i in range(1,11):
+        print(f"{num}*1={num}")
+tabla_multiplicar(5)
+print()
+tabla_multiplicar(3)
+
+  #Funciones con retorno de valor
+
+def multiplicar(num1, num2):
+    mult= num1*num2
+    return mult #retorna un valor
+mult=multiplicar(3,4)
+print(mult)
+
+#2) las funciones retornan un valor o varios valores
+def prueba():
+    return "hola", 45, [1,2,3,4]
+c, n,l=prueba()
+print(c)
+print(n)
+print(l)
+
+
+  #Argumentos y parámetros
+def resta(num1, num2): #recibe valores se llaman paramétros
+    return num1-num2
+print(resta(10,2)) #Argumentos, cuando le pasamos valores
+print(resta(num2=4, num1=2)) #argumento por nombre
+
+
+  #Argumento por valor o por referencia
+
+def doblar_valor(numero):
+    numero*=2
+    print(numero)
+
+n= 5
+doblar_valor(n) #argumento por valor , copia
+print(n)
+
+#
+def doblar_valor(numero):
+    return numero*2
+n= 5
+n=doblar_valor(n) #argumento por valor , copia
+print(n)
+
+#argumentos por referencia, todas las colecciones se pasan por referencia
+def doblar_valores(numeros):
+    for i, n in enumerate(numeros):
+        numeros[i]*=2
+n=[5,10,15,20]
+doblar_valores(n)
+print(n)
+
+
+#como hacer colecciones con valor, es decir, enviar una copia
+
+
+def doblar_valores(numeros):
+    for i, n in enumerate(numeros):
+        numeros[i]*=2
+n=[5,10,15,20]
+doblar_valores(n[:]) #enviandole en valor,no se modifican
+print(n)
+
+"EJERCICIOS"
+
+#1) Desarrollar un programa que pueda calcular del tipo de cambio de meneda (mex-dollares y viceversa)
+def cambio_pesos_dolares(pesosmx):
+    return pesosmx/25
+
+def cambio_dolares_pesos(doll):
+    return doll*25
+
+while True:
+    print("""\t:.MENU:.
+1. Convertir pesos mexicanos a Dólares
+2. Convertir de Dólares a pesos mexicanos
+3. Salir""")
+    opcion=int(input("Digite una opcion:"))
+
+    print()
+
+    if opcion==1:
+        pesosmx=float(input("Digite la cantidad de pesos mexicanos"))
+        print(f"Dólares -> {cambio_pesos_dolares(pesosmx):.2f}")
+    elif opcion==2:
+        doll=float(input("Digite la cantidad de dolares"))
+        print(f"Pesos mexicanos -> ${cambio_dolares_pesos(doll):.2f}")
+    elif opcion==3:
+        break
+    else:
+        print("Se equivocó de opcion de menú")
+
+        print()
+
+
+#2) Hacer un programa que pida la altura y el ancho de un rectangulo, con la ayuda de una funcion lo dibuje con ***
+
+def area(ancho, altura):
+    for i in range(altura):
+        for j in range(ancho):
+            print("*", end="")
+        print()
+ancho=int(input("Digite el ancho del rectángulo"))
+altura=int(input("Digite la altura del rectángulo"))
+
+print()
+area(ancho,altura)
+print()
+area(ancho,altura)
+
+
+#3) Crear un programa que tenga una lista de clientes, cada cliente tiene su nombre, apellido y DNI. El programa tendrá el siguiente menú:
+#a)Agregar nuevo cliente
+#b) Mostrar todos los clientes
+#c) Mostrar cliente por DNI
+#d)Salir
+
+def agregar_cliente(clientes, nombre, apellido, dni):
+    cliente={}
+    cliente['nombre']=nombre
+    cliente['apellido'] = apellido
+    cliente['dni'] = dni
+    clientes.append(cliente)
+
+def mostrar_clientes(clientes):
+    for i in clientes:
+        print(f"Nombre:{i['nombre']}, Apellidos:{i['apellido']}. dni:{i['dni']} ")
+
+def mostrar_cliente(clientes, dni):
+    for i in clientes:
+        if i['dni']==dni:
+            print(f"Nombre:{i['nombre']}, Apellidos:{i['apellido']}. dni:{i['dni']} ")
+            return True
+    return False
+
+def eliminar_cliente(clientes, dni):
+    for i in clientes:
+        if i['dni']==dni:
+            clientes.remove(i)
+            return True
+    return False
+
+clientes=[]
+
+while True:
+    print("""\t.:MENU:.
+1. Agregar nuevo cliente
+2. Mostrar todos los clientes
+3. Mostrar cliente por dni
+4. Eliminar cliente
+5. Salir""")
+    opcion=int(input("Digite una opción:"))
+
+    print()
+
+    if opcion==1:
+        nombre=input("Digite nombre del cliente ->")
+        apellido = input("Digite apellido del cliente ->")
+        dni = input("Digite dni del cliente ->")
+        agregar_cliente(clientes, nombre, apellido, dni)
+    elif opcion==2:
+        mostrar_clientes(clientes)
+
+    elif opcion==3:
+        dni=input("Digite dni del cliente ->")
+        if mostrar_cliente(clientes, dni):
+            print("Cliente encontrado")
+        else:
+            print("Cliente no encontrado")
+
+    elif opcion==4:
+        dni = input("Digite dni del cliente ->")
+        if eliminar_cliente(clientes, dni):
+            print("Cliente eliminado")
+        else:
+            print("Cliente no encontrado")
+
+    elif opcion==5:
+        break
+    else:
+        print("Error, se equivocó de opción de menú")
+
+
+  #FUCIONES RECURSIVAS
+#Funciones iterativas
+
+def cuenta_regresiva(num):
+    if num>0:
+        print(num)
+        cuenta_regresiva(num-1) #estamos llamando a si misma disminuyendola en 1
+    else:
+        print("BOOOOM!!!")
+cuenta_regresiva(5)
+
+"Ejercicios"
+
+#4)Desarrollar un programa para calcular el factorial de un número
+
+factorial=int(input("Digite un número positivo"))
+
+def fac_numero(factorial):
+    if factorial>0:
+        resultado=factorial* fac_numero(factorial-1)
+    else:
+        resultado=1
+
+    return resultado
+
+valor=fac_numero(factorial)
+print(valor)
+
+
+#5) Desarrollar un programa que permita sumar los dígitos de un numero con ayuda de una funcion recursiva.
+
+numero=int(input("Digite un número"))
+
+def suma_digitos(numero):
+    if numero==0: #caso base
+        resul=0
+    else: #caso recursivo
+        resul=suma_digitos(int(numero/10))+(numero%10)
+
+    return resul
+valor=suma_digitos(numero)
+print(valor)
