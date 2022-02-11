@@ -1,0 +1,44 @@
+# EJERCICIOS
+# EJERCICIO 1: Escribir la siguiente expresion(--)en una expresion algoritmica
+a = float(input("a: "))
+b = float(input("b: "))
+c = float(input("c: "))
+resultado = (a ** 3 * (b * 2 - 2 * a * c)) / (2 * b)
+print(f"El resultado es {resultado}")
+
+# EJERCICIO 2: Determinar la solucion logica de la siguiente expresion
+a = float(input("a: "))
+b = float(input("b: "))
+resultado1 = ((3 + 5 * 8) < 3 and ((-6 / 3 * 4) + 2 < 2)) or (a > b)
+print(f"El resultado es {resultado1}")
+
+# EJERCICIO 3: Hacer un programa para intercambiar el valor de dos variables
+'''
+a=10  a=5
+b=5   b=10
+'''
+a = input("a: ")
+b = input("b: ")
+# los estamos guardando como tipo cadena
+# ahora necsitamos intercambiar sus valores
+a, b = b, a  # estamos indicandole a paython que el valor de a lo tiene que almacenar en b y viceversa
+print(f"El nuevo valor de a es :{a}")
+print(f"El nuevo valor de b es :{b}")
+
+# EJERCICIO 4: Hacer un programa para ingresar el radio de un circulo y se reporte su área y la longuitud
+import math
+
+r = float(input("r: "))
+area = math.pi * r ** 2
+print(f"El área del círculo es: {area:.3f}")
+longitud = 2 * math.pi * r
+print(f"La longitud del círculo es : {longitud:.3f}")
+# para acortar los decimales agregamos(n el número de decimales que queremos) :.nf
+
+# EJERCICIO 5: una tienda ofrece un descuento del 15% sobre el total de la compro y un cliente desea saber cuanto pagará finalmente por la compra
+precio=float(input("Digite el precio del producto:"))
+#ahora queremos calcular el 15% del producto
+descuento= precio* 0.15
+precio_final= precio - descuento
+#el :.2f nos mostrará unicamente dos decimales en el resultado
+print(f"El precio final de la compra es ${precio_final:.2f}")
