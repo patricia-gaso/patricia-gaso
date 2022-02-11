@@ -1,0 +1,202 @@
+print("Hola mundo \n mi nombre es patricia galindo")
+
+numero = 12
+print(numero)
+print(type(numero))
+numero4 = 20.35
+print(type(numero4))
+
+cadena = 'Patricia'
+print(cadena)
+print(type(cadena))
+
+cadena1 = "Estoy 'esdudiando' "
+print(cadena1)
+print(type(cadena1))
+
+valor = True
+print(valor)
+print(type(valor))
+
+num1 = 120
+num2 = 45
+suma = num1 + num2
+print(suma)
+
+n1 = 80
+n2 = 25.23
+resultado = n1 + n2
+print("El resultado es:", resultado)
+# agregar comentarios
+'''
+El tipado dinamico nos permite asignar a una misma 
+variable diferentes tipos de datos
+'''
+
+# Operadores aritméticos
+resultado1 = 30 + 12
+print(resultado1)
+
+n1 = 500
+n2 = 80.96
+res = n1 - n2
+print(res)
+div = n1 / n2
+print(div)
+# otra forma de hacer división, es redondear al entero menor
+div = n1 // n2
+print(div)
+# modulo (residuo de la division)
+div = n1 % n2
+print(div)
+# exponentes
+nu1 = 3
+nu2 = 4
+ex = nu1 ** nu2
+print(ex)
+
+'''
+prioridad de las operaciones aritmeticas:
+paréntesis, exponenciación (**), multiplicación(*), división(/), modulo(%), suma y resta
+'''
+# Ejemplo
+operacion = 3 ** 3 * (13 / 5 - (2 * 4))
+print(operacion)
+
+# Operadores relacionales
+'''
+Se utiliza para establecer una relacion entre dos valores. Compara estos valores entre si
+y esta comparacion produce un resultado de certeza o falsedad.
+Tienen el mismo nivel de prioridad  en su evaluacion.
+Los operadores relacionales tienen menor prioridad que los aritmeticos
+Los operadores relacionales son: mayor que, menor que, mayor igual, menor igual, diferente
+igual.
+'''
+# Ejemplo1
+resultado2 = 80 > 180
+print(resultado2)
+# El signo de igual es ==
+resultado3 = 80 == 80
+print(resultado3)
+# El signo de diferencia !=
+dif = 40 != 20
+print(dif)
+
+# El signo de mayor o menor igual >=, <=
+res1 = 80152 >= 455516
+print(res1)
+
+# Ejemplo
+
+a = 80
+b = 41
+c = 11
+res2 = a - c == b
+print(res2)
+
+# Operadores lógicos
+'''
+Permite construir expresiones lógicas, se obtiene como resultado booleano
+Estos operadores lógicos son: 
+disyunción (OR): se le conoce como una suma lógica, para que el resultado sea verdadero,
+tiene que haber al menos un valor verdadero(true), la unica forma para que la suma sea 
+mayor o igual que 1, es que al menos un valor sea 1.
+
+conjunción (AND) : se considera como una multiplicación lógica, y la única forma
+en la que resultado nos de verdadero (true) es que ambos operandos sean verdaderos, 
+es decir que, la unica forma para que el resultado nos de 1, es que ambos sean 1. 
+
+negación (NOT): si tengo un operando verdadero (True) y lo niego con el operador negación, 
+obtengo Falso, y viceversa 
+La prioridad de los operadores lógicos tiene el soguiente orden; 
+1) NOT
+2)AND
+3)OR
+'''
+
+# PRIORIDAD DE LOS OPERADORES EN GENERAL
+'''
+1) Paréntesis ()
+2) exponentes **
+3) *, /, mod, not
+4) +, -, and
+5) >,<, >=,<=, ==, !=, or
+'''
+# EJEMPLOS:
+a = 10
+b = 15
+c = 20
+r1 = ((a < b) and (b < c))
+print(r1)
+r2 = ((a > b) or (b < c))
+print(r2)
+r3 = not ((a > b) or (b < c))
+print(r3)
+
+# OPERADORES DE ASIGNACIÓN
+# debemos tener primero una variable inicial
+a = 0
+a += 5  # se le conoce como suma en asignación
+a -= 2  # resta en asignación
+a *= 3  # multiplicación en asignación
+a /= 3  # división en asignación
+a **= 2  # potencia en asignación
+a %= 2  # módulo en asignación
+print(a)
+
+# DATOS DE SALIDA
+nombre = "Patricia"
+edad = 23
+print("Hola", nombre, "tienes", edad, "años")
+print("Hola {} tienes {} años".format(nombre, edad))
+print(f"Hola {nombre} tienes {edad} años")
+
+# ENTRADA DE DATOS
+'''
+Para pedir datos utilizamos la funcion InPUT() guarda datos de tipo cadena
+'''
+# guarda el dato en tipo cadena y lo guarda dentro de nombre
+nombre = input("Digite su nombre:")
+print(f"Hola {nombre}")
+
+# guardar un valor entero en la variable numero: agregamos int delante de input
+numero = int(input("agrega un numero: "))
+print(f"El numero es {numero + 1}")
+# guardar numeros fraccionarios
+
+numero = float(input("Digite un número"))
+print(f"El numero es {numero + 2}")
+
+# Funciones integradas
+'''
+Sirven para hacer converciones entre tipos de datos
+funcion 'str() de numerico a cadena
+'''
+
+n = str(10)
+print(n)  # el 10 ya está convertido a cadena
+
+# convertir un valor entero a un valor binario la funcion 'bin', para hexadecimal la funcion 'hex
+n = bin(10)
+print(n)
+
+n = hex(50)
+print(n)
+
+# converir un valor binario a entero: con la funcion 'int
+
+n = int("0b1010", 2)
+print(n)
+
+# valor absoluto de un numero funcion : abs
+n = abs(-40)
+print(n)
+
+# funcion que redondea un numero hacia el entero mas cercano
+n = round(80.0035)
+print(n)
+
+# la funcion 'len' cuenta la catidad de letras que tiene una cadena
+n = len("Patricia")
+print(n)
+
